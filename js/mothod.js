@@ -75,7 +75,20 @@ const click = (e) => {
 	}
 	else {
 		step[x][y] = 0;
-		div.className = 'boom';
+		for(let i = 0;i < xSize;i++){
+			for(let j = 0;j < ySize;j++){
+				const tdiv = document.getElementById(i+'/'+j);
+				if(gameMap[i][j] > 0){
+					tdiv.className = 'tapNum';
+					tdiv.style.fontSize = '32px';
+					tdiv.innerText = gameMap[i][j];
+				}else if(gameMap[i][j] === -1){
+					tdiv.className = 'boom';
+				}else {
+					tdiv.className = 'tapNum';
+				}
+			}
+		}
 	}
 	console.log(gameMap[x][y]);
 }
