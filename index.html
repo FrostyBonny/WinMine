@@ -5,17 +5,49 @@
 		<title></title>
 	</head>
 	<style tySizepe="text/css">
+		.init{
+			background-color:#c4c4c4;
+			/*float:left;*/
+//			margin = 1px;
+			border-top: 1px solid #ffffff;
+			border-bottom:1px solid #aaaaaa;
+			border-right: 1px solid #aaaaaa;
+			border-left: 1px solid #ffffff;
+		}
 		.tapNum{
-			
+			background-color:#eeeeee;
+			/*float:left;*/
+//			margin = 1px;
+			border-top: 1px solid #ffffff;
+			border-bottom:1px solid #aaaaaa;
+			border-right: 1px solid #aaaaaa;
+			border-left: 1px solid #ffffff;
+			text-align: center;
+			/*vertical-align: ;*/
 		}
 		.tapBoom{
 			
 		}
+		.boom{
+			background-color:red;
+			/*float:left;*/
+//			margin = 1px;
+			border-top: 1px solid #ffffff;
+			border-bottom:1px solid #aaaaaa;
+			border-right: 1px solid #aaaaaa;
+			border-left: 1px solid #ffffff;
+		}
 		.container{
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
 			position: absolute;
 			width:500px;
 			left: 30%;
 			right: 30%;
+			display: flex;
+			flex-wrap: wrap;
 			/*border: 1px solid black;*/
 		}
 		.div{
@@ -32,38 +64,45 @@
 		const xSize = 10;
 		const ySize = 10;
 		const root = document.getElementById('map');
-		const map = new Array(xSize);
+		const gameMap = new Array(xSize);
+		const step = new Array(xSize);
 		for(let i = 0;i < xSize;i++){
-			map[i] = new Array(ySize);
-			map[i].fill(0)
+			gameMap[i] = new Array(ySize);
+			step[i] = new Array(ySize);
+			gameMap[i].fill(0);
+			step[i].fill(1);
 		}
 		for(let i = 0;i < xSize;i++){
 			while(true){
 		 		const x = randomNum(0,xSize-1);
 				const y = randomNum(0,ySize-1);
-				if(map[x][y] === 0){
-					map[x][y] = -1;
+				if(gameMap[x][y] === 0){
+					gameMap[x][y] = -1;
 					break;
 				}
 			}
 		}
+		console.log(step)
 		for(let i = 0;i < xSize;i++){
 			for(let j = 0;j < ySize;j++){
-				map[i][j] = countBoom(map,i,j,0);
+				gameMap[i][j] = countBoom(gameMap,i,j,0);
 				const patch = document.createElement('div');
-				patch.style.backgroundColor = '#c4c4c4';
+//				patch.style.backgroundColor = '#c4c4c4';
 				patch.style.width = Math.floor(root.offsetWidth * 0.1 - 2) + 'px';
 				patch.style.height = Math.floor(root.offsetWidth * 0.1 - 2) + 'px';
-				patch.style.float = 'right'
+//				patch.style.float = 'left'
 //				patch.style.margin = '1px';
-				patch.style.borderTop = '1px solid #ffffff';
-				patch.style.borderBottom = '1px solid #aaaaaa';
-				patch.style.borderRight = '1px solid #aaaaaa';
-				patch.style.borderLeft = '1px solid #ffffff';
+//				patch.style.borderTop = '1px solid #ffffff';
+//				patch.style.borderBottom = '1px solid #aaaaaa';
+//				patch.style.borderRight = '1px solid #aaaaaa';
+//				patch.style.borderLeft = '1px solid #ffffff';
+				patch.className = 'init';
+				patch.onclick = click;
+				patch.id = i + '/' + j;
 				root.appendChild(patch);
 			}
 		}
-		console.log(map);
+		console.log(gameMap);
 		
 	</script>
 </html>
