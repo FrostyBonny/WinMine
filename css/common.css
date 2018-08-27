@@ -1,0 +1,72 @@
+.init {
+	background-color: #c4c4c4;
+	/*float:left;*/
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	border-left: 1px solid #ffffff;
+}
+
+.tapNum {
+	background-color: #eeeeee;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	border-left: 1px solid #ffffff;
+	text-align: center;
+}
+
+.tapBoom {
+	background-color: red;
+	background-image: url('../img/mine.png');
+	filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	border-left: 1px solid #ffffff;
+}
+
+.boom {
+	background-color: #eeeeee;
+	background-image: url('../img/mine.png');
+	filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	border-left: 1px solid #ffffff;
+}
+
+.container {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	position: absolute;
+	width: 500px;
+	left: 30%;
+	right: 30%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flag {
+	background-color: #eeeeee;
+	background-image: url('../img/flag.png');
+	filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+	/*float:left;*/
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	border-left: 1px solid #ffffff;
+}
+
+.letfBorad{
+	background-color: #eeeeee;
+	
+}
