@@ -47,9 +47,7 @@ const spread = (x,y) => {
 		const ty = Number(y) + Number(dir[i][1]);
 		if(tx < 0 || ty < 0 || tx >= xSize||ty >= ySize||step[tx][ty] === 0) continue;
 //		console.log(Number(tx),Number(ty));
-		console.log(tx+'/'+ty)
 		const div = document.getElementById(tx + '/' + ty);
-		console.log(tx+'/'+ty)
 		div.className = 'tapNum';
 		spread(tx,ty);
 	}
@@ -89,6 +87,7 @@ const click = (e) => {
 				}
 			}
 		}
+		div.className = 'tapBoom';
 	}
 	console.log(gameMap[x][y]);
 }
