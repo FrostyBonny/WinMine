@@ -6,8 +6,34 @@
 	</head>
 	<link rel="stylesheet" href="css/common.css" type="text/css" />
 	<body>
-		<div class="letfBorad"></div>
-		<div id='map' class="container">
+		<div id="box">
+			<div class="game">
+				<div id='map' class="container"></div>
+			</div>
+			<div class="rightBoard">
+				<div class="item">
+					剩余雷数：
+					<span id="mineRemain" class="number">10</span>
+				</div>
+				<div class="item">
+					扫雷用时：
+					<span id="timeUsed" class="number">0</span>
+					秒
+				</div>
+				<fieldset class="item">
+					<legend>难度选择:</legend>
+					<input id="level1" name="level" type="radio" checked="true">初级 (10*10) [10颗地雷]</input><br>
+					<input id="level2" name="level" type="radio" >中级 (16*16) [40颗地雷]</input><br>
+				</fieldset>
+				<input type="button" id="restart" value="重新开始">
+<!--				<button class="">重新开始</button>-->
+				<div class="tips">
+					<ol>
+<!--						<li>点击"开始游戏"开始计时</li>-->
+						<li>游戏过程中点击"重新开始"会开始新游戏</li>
+					</ol>
+				</div>
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript" src="js/mothod.js"></script>

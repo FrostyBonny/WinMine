@@ -1,3 +1,6 @@
+body{
+	background: rgb(102,189,110);
+}
 .init {
 	background-color: #c4c4c4;
 	/*float:left;*/
@@ -5,6 +8,11 @@
 	border-bottom: 1px solid #aaaaaa;
 	border-right: 1px solid #aaaaaa;
 	border-left: 1px solid #ffffff;
+}
+#box{
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
 }
 
 .tapNum {
@@ -45,9 +53,9 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	position: absolute;
-	width: 500px;
-	left: 30%;
+	width: 450px;
+	left: 0;
+	margin-top: 10%;
 	right: 30%;
 	display: flex;
 	flex-wrap: wrap;
@@ -66,7 +74,32 @@
 	border-left: 1px solid #ffffff;
 }
 
-.letfBorad{
-	background-color: #eeeeee;
-	
+.rightBoard{
+	/*background-color: #eeeeee;*/
+	width: 30%;
+	margin-top: 10%;
+	display: inline-block;
+	float: left;
+}
+
+.game{
+	float: left;
+	width: 60%;
+	height: 100%;
+}
+
+.number{
+	color: red;
+	font-size: 2em;
+	padding: 10px;
+}
+
+.item{
+	text-align: center;
+}
+
+#restart{
+	width: 80px;
+	height: 30px;
+	margin: 5px 5px 5px 30%;
 }

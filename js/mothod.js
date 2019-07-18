@@ -11,11 +11,28 @@ const dir = [
 document.oncontextmenu = function() {
 	return false;
 };
-const xSize = 10;
-const ySize = 10;
 const root = document.getElementById('map');
+const flagCountElement = document.getElementById("mineRemain");
+const timeCountElement = document.getElementById("timeUsed");
+const selectElement = document.getElementsByName("level");
+const restartBtn = document.getElementById("restart");
+let xSize = null;
+let ySize = null;
 let gameMap = new Array(xSize);
 let step = new Array(xSize);
+let mine = [];
+let flagMine = [];
+let flagCount;
+let startTime = null;
+let fontSize = null;
+let timer = setInterval(function(){
+	if(startTime){
+		timeCountElement.innerHTML = (Math.floor((new Date()-startTime)/1000)).toString();
+	}
+},1000);
+
+
+
 const round = (number, precision) => {
 	return Math.round((number + 'e' + precision) / Math.pow(10, precision));
 	//same as:
@@ -54,7 +71,7 @@ const spread = (x, y) => {
 	if(gameMap[x][y] !== 0) {
 		const div = document.getElementById(x + '/' + y);
 		div.className = 'tapNum';
-		div.style.fontSize = '32px';
+		div.style.fontSize = fontSize;
 		div.innerText = gameMap[x][y];
 		return;
 	}
